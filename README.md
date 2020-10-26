@@ -45,3 +45,15 @@ To start working on the project, you need to create a new branch by running the 
 ```sh
 git checkout -b <your-branch-name>
 ```
+
+### Push your branch to master branch
+
+Once you have committed work on your branch, you can push your branch to the master branch by running the following command.
+
+```sh
+git push origin <your-branch-name>
+```
+
+### Create a pull request
+
+Once your branch is pushed to the master branch, you can create a pull request to be reviewed and merged. To do this, go to the project GitHub page and click on 'Pull requests', then click on 'Create pull request'. Fill out information about the branch you pushed and submit the pull request. 
