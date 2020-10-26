@@ -37,6 +37,10 @@ npm run start
 Then open up the following URL in your browser:
 <http://localhost:4200>
 
+### Determine where you can help
+
+There are many existing [issues](https://github.com/cool-dev-team-0/covid-tracker/issues) where you can get started. Please review these issues with no assignees then once you have found one like assign yourself to it. Be sure to note down the issue number as you will need to add `fixes: #<issue-number>` to your pull request for the two to be linked. If you get stuck at any point tag the team in a comment on the issue and someone will offer assistance.
+
 ### Create a branch
 
 To start working on the project, you need to create a new branch by running the following command.
@@ -141,7 +145,7 @@ Once your branch is pushed to GitHub, you can create a pull request to be review
 
 - What you have changed
 - Why this change is needed
-- What [issues](https://github.com/cool-dev-team-0/covid-tracker/issues) is resolves
+- What [issues](https://github.com/cool-dev-team-0/covid-tracker/issues) is resolves in the following format `fixes: #<issue-number>` ie `fixes: #2`
 - Anything that breaks as a result of this change
 - If the changes have been tested via Protractor or Jasmine
 
