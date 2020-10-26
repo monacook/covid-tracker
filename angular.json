@@ -123,6 +123,11 @@
           }
         }
       }
-    }},
-  "defaultProject": "covid-tracker"
+    }
+  },
+  "defaultProject": "covid-tracker",
+  "cli": {
+    "packageManager": "npm",
+    "analytics": false
+  }
 }
