@@ -36,3 +36,12 @@ npm run start
 
 Then open up the following URL in your browser:
 http://localhost:4200
+
+
+### Create a branch
+
+To start working on the project, you need to create a new branch by running the following command.
+
+```sh
+git checkout -b <your-branch-name>
+```
