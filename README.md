@@ -1,27 +1,38 @@
-# CovidTracker
+# Covid Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+## Requirements
 
-## Development server
+- Git
+- Node v12+ & NPM
+- Angular CLI v10+
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+### Clone the project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+First step is you will to download the project to your computer.
+Open your terminal and navigate to your directory of choice then run the following command.
 
-## Build
+```sh
+git clone https://github.com/cool-dev-team-0/covid-tracker.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Install the Dependencies
 
-## Running unit tests
+Next you will need to install the node dependencies for this project.
+You can do so with the following command.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+npm install
+```
 
-## Running end-to-end tests
+### Test the project
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+To make sure everything is working run the following command to start the project.
 
-## Further help
+```sh
+npm run start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Then open up the following URL in your browser:
+http://localhost:4200
