@@ -1,0 +1,15 @@
+<p>{{ name$ | async }}</p>
+<ngx-charts-area-chart
+  [view]="[700, 300]"
+  [scheme]="{ domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5'] }"
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxis]="false"
+  [yAxis]="true"
+  xAxisLabel="Date"
+  yAxisLabel="People"
+  [timeline]="true"
+  [results]="chart$ | async"
+>
+</ngx-charts-area-chart>

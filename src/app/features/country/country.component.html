@@ -1,0 +1,2 @@
+<app-country-menu [selected]="country$ | async" (changed)="switchCountry($event)"></app-country-menu>
+<app-country-data [country]="country$ | async"></app-country-data>
