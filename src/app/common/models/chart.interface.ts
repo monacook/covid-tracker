@@ -1,4 +1,4 @@
-export interface ChartNode {
+export interface ChartNodeRaw {
   Country: string;
   CountryCode: string;
   Province: string;
@@ -11,4 +11,14 @@ export interface ChartNode {
   Recovered: number;
   Active: number;
   Date: string;
+}
+
+export interface SeriesNode {
+  name: string;
+  value: number;
+}
+
+export interface ChartSeries {
+  name: string;
+  series: SeriesNode[]
 }

@@ -1,7 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { CovidService } from 'src/app/common/services/covid.service';
+
+import { CovidService } from '../../../../common/services/covid.service';
 
 @Component({
   selector: 'app-country-data',

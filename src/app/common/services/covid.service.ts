@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { shareReplay, map, filter, concatMap } from 'rxjs/operators';
-import { ICountryRaw, ICountry } from '../models/country.interface';
 import { Observable } from 'rxjs';
-import { ChartNode } from '../models/chart.interface';
+import { shareReplay, map, filter, concatMap } from 'rxjs/operators';
+
+import { ICountryRaw } from '../models/country.interface';
+import { ChartNodeRaw, ChartSeries } from '../models/chart.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -24,8 +25,26 @@ export class CovidService {
     );
   }
 
-  public getChart(slug: string): Observable<ChartNode[]> {
-    console.log(slug);
-    return this.http.get<ChartNode[]>(`https://api.covid19api.com/total/country/${slug}`);
+  public getChart(slug: string): Observable<ChartSeries[]> {
+    return this.http.get<ChartNodeRaw[]>(`https://api.covid19api.com/total/country/${slug}`).pipe(
+      map((chartNodes) => [
+        {
+          name: 'Confirmed',
+          series: chartNodes.map((node) => ({ name: node.Date, value: node.Confirmed })),
+        },
+        {
+          name: 'Active',
+          series: chartNodes.map((node) => ({ name: node.Date, value: node.Active })),
+        },
+        {
+          name: 'Recovered',
+          series: chartNodes.map((node) => ({ name: node.Date, value: node.Recovered })),
+        },
+        {
+          name: 'Deaths',
+          series: chartNodes.map((node) => ({ name: node.Date, value: node.Deaths })),
+        },
+      ])
+    );
   }
 }
