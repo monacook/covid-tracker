@@ -5,6 +5,7 @@ import { shareReplay, map, filter, concatMap } from 'rxjs/operators';
 
 import { ICountryRaw } from '../models/country.interface';
 import { ChartNodeRaw, ChartSeries } from '../models/chart.interface';
+import { ICountriesDetails, ICountriesDetailsRaw } from '../models/country-details-interface';
 
 @Injectable({
   providedIn: 'root',
@@ -45,6 +46,26 @@ export class CovidService {
           series: chartNodes.map((node) => ({ name: node.Date, value: node.Deaths })),
         },
       ])
+    );
+  }
+
+  public getSummary(): Observable<ICountriesDetails> {
+    return this.http.get<ICountriesDetailsRaw>('https://api.covid19api.com/summary').pipe(
+      map((countryDetails) => ({
+        global: {
+          totalDeaths: countryDetails.Global.TotalDeaths,
+          totalRecovered: countryDetails.Global.TotalRecovered,
+          totalConfirmed: countryDetails.Global.TotalConfirmed,
+        },
+
+        countries: countryDetails.Countries.map((country) => ({
+          name: country.Country,
+          slug: country.Slug,
+          totalDeaths: country.TotalDeaths,
+          totalRecovered: country.TotalRecovered,
+          totalConfirmed: country.TotalConfirmed,
+        })),
+      }))
     );
   }
 }
