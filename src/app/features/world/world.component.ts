@@ -16,7 +16,7 @@ export class WorldComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  public displayedColumns: string[] = ['name', 'totalDeaths', 'totalConfirmed', 'totalRecovered'];
+  public displayedColumns: string[] = ['name', 'totalDeaths', 'totalConfirmed', 'totalRecovered', 'date'];
   public dataSource = new MatTableDataSource<ICountryDetails>();
   public subscription = new Subscription();
 

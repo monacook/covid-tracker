@@ -64,6 +64,7 @@ export class CovidService {
           totalDeaths: country.TotalDeaths,
           totalRecovered: country.TotalRecovered,
           totalConfirmed: country.TotalConfirmed,
+          date: country.Date
         })),
       }))
     );
